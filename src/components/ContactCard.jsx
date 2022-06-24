@@ -2,7 +2,7 @@ import React from 'react';
 import { BiTrash } from 'react-icons/bi';
 import user from '../images/user.png';
 
-const ContactCard = ({ contact }) => {
+const ContactCard = ({ contact, removeContactHandeler }) => {
 	return (
 		<div className="bg-gray-200 my-2 rounded-md p-4">
 			<section className="flex justify-between items-center">
@@ -17,7 +17,12 @@ const ContactCard = ({ contact }) => {
 						<h1 className="text-md text-gray-500">{contact.email}</h1>
 					</div>
 				</div>
-				<BiTrash size={30} color="red" />
+				<BiTrash
+					size={30}
+					color="red"
+					className="cursor-pointer "
+					onClick={() => removeContactHandeler(contact.id)}
+				/>
 			</section>
 		</div>
 	);
